@@ -31,7 +31,7 @@ let myDishes = [
 
     },
      {
-        "name": "Hamburger",
+        "name": "Hamburger Bacon",
         "price": 2.49,
          "descripton": "Ein echter Klassiker: Unser Hamburger überzeugt mit einem saftigen Rindfleisch-Patty, frisch gegrillt und perfekt gewürzt. Dazu kommen knackiger Salat, aromatische Tomaten, frische Zwiebeln, Gurken und unsere spezielle Burgersoße, eingebettet in einem goldbraun gerösteten, fluffigen Bun. Einfach purer Genuss in jedem Biss",
     },
