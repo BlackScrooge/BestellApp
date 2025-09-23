@@ -22,7 +22,7 @@ let myDishes = [
      {
         "name": "Hamburger Royal Cheese",
         "price": 7.79,
-        "descripton": "Der Hamburger Royal Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis",
+        "descripton": "Der Hamburger Royal Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis.",
     },
      {
         "name": "Cheeseburger",
@@ -33,7 +33,7 @@ let myDishes = [
      {
         "name": "Hamburger Bacon",
         "price": 2.49,
-         "descripton": "Ein echter Klassiker: Unser Hamburger überzeugt mit einem saftigen Rindfleisch-Patty, frisch gegrillt und perfekt gewürzt. Dazu kommen knackiger Salat, aromatische Tomaten, frische Zwiebeln, Gurken und unsere spezielle Burgersoße, eingebettet in einem goldbraun gerösteten, fluffigen Bun. Einfach purer Genuss in jedem Biss",
+         "descripton": "Ein echter Klassiker: Unser Hamburger überzeugt mit einem saftigen Rindfleisch-Patty, frisch gegrillt und perfekt gewürzt. Dazu kommen knackiger Salat, aromatische Tomaten, frische Zwiebeln, Gurken und unsere spezielle Burgersoße, eingebettet in einem goldbraun gerösteten, fluffigen Bun. Einfach purer Genuss in jedem Biss.",
     },
 ]
 
