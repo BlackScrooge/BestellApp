@@ -37,36 +37,43 @@ let myDishes = [
     },
 ]
 
-// Warenkorb als Array
+  // Warenkorb als Array
   let basket = [];
 
   // Funktion zum Hinzufügen
   function addMeal(product, price) {
-    basket.push({ name: product, price: price });
+    basket.push({ name: product, price: Number(price) });
+    saveBasket();
     renderBasket();
   }
 
   // Warenkorb anzeigen
   function renderBasket() {
-    const basktetList = document.getElementById("basket");
-    cartList.innerHTML = ""; // alten Inhalt löschen
+    const basketList = document.getElementById("basket");
+    if (!basketList) return; // falls DOM noch nicht bereit
+    basketList.innerHTML = ""; // alten Inhalt löschen
 
     basket.forEach(item => {
-      let li = document.createElement("li");
+      const li = document.createElement("li");
       li.textContent = `${item.name} - ${item.price.toFixed(2)} €`;
       basketList.appendChild(li);
     });
   }
 
- function saveBasket() {
-  localStorage.setItem("basket", JSON.stringify(basket));
-}
+  function saveBasket() {
+    localStorage.setItem("basket", JSON.stringify(basket));
+  }
 
-function loadBasket() {
-  let stored = localStorage.getItem("basket");
-  if (stored) basket = JSON.parse(stored);
-  renderBasket();
-}
+  function loadBasket() {
+    try {
+      const stored = localStorage.getItem("basket");
+      basket = stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      basket = [];
+      console.error("Konnte basket nicht laden:", e);
+    }
+    renderBasket();
+  }
 
-// direkt beim Laden aufrufen
-loadBasket();
+  // Beim DOM-Ready laden (sicherer als sofort)
+  document.addEventListener("DOMContentLoaded", loadBasket);
