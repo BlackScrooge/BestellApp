@@ -27,8 +27,11 @@
              <p class="meal_name">Habanero Ranch</p> 
              <p class="meal_description">Der Habanero Ranch sorgt für würzigen Feuerzauber: Knuspriges Hähnchenfilet oder saftiges Rindfleisch, verfeinert mit cremiger Ranch-Sauce und einem feurigen Habanero-Kick. Dazu frischer Salat, Tomaten und ein fluffiger Bun – die perfekte Mischung aus cremig und scharf für alle, die es intensiv lieben.</p>
              <p class="price">7.49€</p>
-             <button class="add_meal" onclick="addMeal('Habanero Ranch', 7.49)">
+             <button class="add_meal" onclick="addMeal('Habanero Ranch', 7.49)">             
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
+             <button class="add_meal" onclick="removeMeal('Habanero Ranch', 7.49)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
              </button> 
             </div>
             <div class="meal_dish">
@@ -39,6 +42,9 @@
              <button class="add_meal" onclick="addMeal('Philly Cheese Stack', 8.99)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="add_meal" onclick="removeMeal('Philly Cheese Stack', 8.99)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Chicken Samurai.jpg">
@@ -48,6 +54,9 @@
              <button class="add_meal" onclick="addMeal('Chicken Samurai', 7.49)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="remove_meal" onclick="removeMeal('Chicken Samurai', 7.49)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/20 Garlic Pepper Chicken Nuggets.jpg">
@@ -57,6 +66,9 @@
              <button class="add_meal" onclick="addMeal('20 Garlic Pepper Chicken Nuggets', 12.99)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="remove_meal" onclick="removeMeal('20 Garlic Pepper Chicken Nuggets', 12.99)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Hamburger Royal Cheese.jpg">
@@ -66,6 +78,9 @@
              <button class="add_meal" onclick="addMeal('Hamburger Royal Cheese', 7.79)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="remove_meal" onclick="removeMeal('Hamburger Royal Cheese', 7.79)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Cheeseburger.jpg">
@@ -75,6 +90,9 @@
              <button class="add_meal" onclick="addMeal('Cheeseburger', 2.89)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="remove_meal" onclick="removeMeal('Cheeseburger', 2.89)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Hamburger Bacon.jpg">
@@ -84,11 +102,16 @@
              <button class="add_meal" onclick="addMeal('Hamburger Bacon', 2.49)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
+             <button class="remove_meal" onclick="removeMeal('Hamburger Bacon', 2.49)">
+                <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
+             </button> 
             </div>
             <image id="page_bottom_images" type="img" alt="half_burger" src="./assets/img/burger bottom.png"></image>
         </section>
         <section class="basket_wrapper">
-            <div id="basket">Warenkorb</div>
+            <p class="headline_basket">Warenkorb</p>
+            <div id="basket"></div>
+            <p id="total">Summe: 0,00 €</p>
         </section>
     </div>
     <footer>

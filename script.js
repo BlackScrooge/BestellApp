@@ -47,6 +47,17 @@ let myDishes = [
     renderBasket();
   }
 
+  function removeMeal(product) {
+  // Index des ersten passenden Elements suchen
+  const index = basket.findIndex(item => item.name === product);
+
+  if (index !== -1) {
+    basket.splice(index, 1); // genau 1 Element an dieser Stelle löschen
+    saveBasket();
+    renderBasket();
+  }
+  }
+
   // Warenkorb anzeigen
   function renderBasket() {
     const basketList = document.getElementById("basket");
@@ -55,14 +66,14 @@ let myDishes = [
 
     basket.forEach(item => {
       const li = document.createElement("li");
-      li.textContent = `${item.name} - ${item.price.toFixed(2)} €`;
+      li.textContent = `${item.name}  ${item.price.toFixed(2)} €`;
       basketList.appendChild(li);
     });
   }
 
-  function saveBasket() {
-    localStorage.setItem("basket", JSON.stringify(basket));
-  }
+function saveBasket() {
+  localStorage.setItem("basket", JSON.stringify(basket));
+}
 
   function loadBasket() {
     try {
@@ -77,3 +88,23 @@ let myDishes = [
 
   // Beim DOM-Ready laden (sicherer als sofort)
   document.addEventListener("DOMContentLoaded", loadBasket);
+
+// Warenkorb darstellen + Summe berechnen
+  function renderBasket() {
+    const basketList = document.getElementById("basket");
+    const totalEl = document.getElementById("total");
+    basketList.innerHTML = "";
+
+    let sum = 0;
+
+   basket.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.name} – ${item.price.toFixed(2)} €`;
+      basketList.appendChild(li);
+
+      sum += item.price; // Preise addieren
+      });
+
+    totalEl.textContent = "Summe: " + sum.toFixed(2) + " €";
+    }
+
