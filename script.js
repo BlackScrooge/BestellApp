@@ -37,4 +37,36 @@ let myDishes = [
     },
 ]
 
-add_meal()
+// Warenkorb als Array
+  let basket = [];
+
+  // Funktion zum Hinzufügen
+  function addMeal(product, price) {
+    basket.push({ name: product, price: price });
+    renderBasket();
+  }
+
+  // Warenkorb anzeigen
+  function renderBasket() {
+    const basktetList = document.getElementById("basket");
+    cartList.innerHTML = ""; // alten Inhalt löschen
+
+    basket.forEach(item => {
+      let li = document.createElement("li");
+      li.textContent = `${item.name} - ${item.price.toFixed(2)} €`;
+      basketList.appendChild(li);
+    });
+  }
+
+ function saveBasket() {
+  localStorage.setItem("basket", JSON.stringify(basket));
+}
+
+function loadBasket() {
+  let stored = localStorage.getItem("basket");
+  if (stored) basket = JSON.parse(stored);
+  renderBasket();
+}
+
+// direkt beim Laden aufrufen
+loadBasket();
