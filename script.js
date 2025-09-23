@@ -37,4 +37,4 @@ let myDishes = [
     },
 ]
 
-document.getElementById("meal_name").textContent = JSON.stringify(myDishes, null, 2);
+add_meal()

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles/assets.css"> 
     <link rel="stylesheet" href="./styles/standard.css"> 
     <link rel="stylesheet" href="./styles/basket.css"> 
-    <link rel="" ref="./assets/fonts/HennyPenny-Regular.ttf">
+    <link rel="stylesheet" href="./styles/fonts.css"
     <script src="./script.js"></script>
     <title>BestellApp</title>
 </head>
@@ -23,39 +23,67 @@
             <h1>Paradise Burger</h1> 
             <h2>Hauptgerichte</h2>
             <div class="meal_dish">
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Habanero Ranch.jpg">
              <p class="meal_name">Habanero Ranch</p> 
-             <p>Der Habanero Ranch sorgt für würzigen Feuerzauber: Knuspriges Hähnchenfilet oder saftiges Rindfleisch, verfeinert mit cremiger Ranch-Sauce und einem feurigen Habanero-Kick. Dazu frischer Salat, Tomaten und ein fluffiger Bun – die perfekte Mischung aus cremig und scharf für alle, die es intensiv lieben.</p>
-             <p> 7.49€</p> 
+             <p class="meal_description">Der Habanero Ranch sorgt für würzigen Feuerzauber: Knuspriges Hähnchenfilet oder saftiges Rindfleisch, verfeinert mit cremiger Ranch-Sauce und einem feurigen Habanero-Kick. Dazu frischer Salat, Tomaten und ein fluffiger Bun – die perfekte Mischung aus cremig und scharf für alle, die es intensiv lieben.</p>
+             <p class="price">7.49€</p>
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button> 
             </div>
             <div class="meal_dish">
-             <p id="meal_name"> Philly Cheese Stack</p>
-             <p>Der Philly Cheese Stack bringt den legendären Streetfood-Klassiker direkt auf deinen Teller: Saftig gegrilltes Rindfleisch, geschmolzener Käse in reichlicher Portion, gebratene Zwiebeln und Paprika – alles kunstvoll geschichtet in einem soften Bun. Ein herzhafter Genuss, der satt macht und Lust auf mehr weckt.</p>
-             <p>8.99€</p>
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Philly Cheese Stack.jpg">
+             <p class="meal_name"> Philly Cheese Stack</p>
+             <p class="meal_description">Der Philly Cheese Stack bringt den legendären Streetfood-Klassiker direkt auf deinen Teller: Saftig gegrilltes Rindfleisch, geschmolzener Käse in reichlicher Portion, gebratene Zwiebeln und Paprika – alles kunstvoll geschichtet in einem soften Bun. Ein herzhafter Genuss, der satt macht und Lust auf mehr weckt.</p>
+             <p class="price">8.99€</p>
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <div class="meal_dish">
-             <p id="meal_name">Chicken Samurai</p> 
-             <p>Der Chicken Samurai vereint feurigen Geschmack mit zartem Biss: Knusprig paniertes Hähnchenfilet trifft auf eine würzig-scharfe Samurai-Sauce, frischen Salat, knackige Gurken und einen soften Bun. Ein Burger, der mit jedem Bissen Mut und Geschmack beweist.</p>
-             <p>7.49€</p> 
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Chicken Samurai.jpg">
+             <p class="meal_name">Chicken Samurai</p> 
+             <p class="meal_description">Der Chicken Samurai vereint feurigen Geschmack mit zartem Biss: Knusprig paniertes Hähnchenfilet trifft auf eine würzig-scharfe Samurai-Sauce, frischen Salat, knackige Gurken und einen soften Bun. Ein Burger, der mit jedem Bissen Mut und Geschmack beweist.</p>
+             <p class="price">7.49€</p> 
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <div class="meal_dish">
-             <p id="meal_name">20 Garlic Pepper Chicken Nuggets</p> 
-             <p>Unsere 20 Garlic Pepper Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
-             <p>12.99€</p>
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/20 Garlic Pepper Chicken Nuggets.jpg">
+             <p class="meal_name">20 Garlic Pepper Chicken Nuggets</p> 
+             <p class="meal_description">Unsere 20 Garlic Pepper Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
+             <p class="price">12.99€</p>
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <div class="meal_dish">
-             <p id="meal_name">Hamburger Royal Cheese</p> 
-             <p>Der Hamburger Royal Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis.</p>
-             <p>7.79€</p> 
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Hamburger Royal Cheese.jpg">
+             <p class="meal_name">Hamburger Royal Cheese</p> 
+             <p class="meal_description">Der Hamburger Royal Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis.</p>
+             <p class="price">7.79€</p> 
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <div class="meal_dish">
-             <p id="meal_name">Cheeseburger</p> 
-             <p>Jetzt noch leckerer, saftiger und voller Genuss: der heißgeliebte Cheeseburger mit dem besonderen Etwas! Zartschmelzender Käse, saftiges Rindfleisch, frische Zwiebeln, knackige Gurken, würziger Ketchup, feiner Senf und ein extra weiches Bun, eine Kombination, die einfach glücklich macht.</p>
-             <p>2.89€</p> 
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Cheeseburger.jpg">
+             <p class="meal_name">Cheeseburger</p> 
+             <p class="meal_description">Jetzt noch leckerer, saftiger und voller Genuss: der heißgeliebte Cheeseburger mit dem besonderen Etwas! Zartschmelzender Käse, saftiges Rindfleisch, frische Zwiebeln, knackige Gurken, würziger Ketchup, feiner Senf und ein extra weiches Bun, eine Kombination, die einfach glücklich macht.</p>
+             <p class="price">2.89€</p> 
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <div class="meal_dish">
-             <p id="meal_name">Hamburger Bacon</p>  
-             <p>Ein echter Klassiker: Unser Hamburger überzeugt mit einem saftigen Rindfleisch-Patty, frisch gegrillt und perfekt gewürzt. Dazu kommen knackiger Salat, aromatische Tomaten, frische Zwiebeln, Gurken und unsere spezielle Burgersoße, eingebettet in einem goldbraun gerösteten, fluffigen Bun.</p>
-             <p>2.49€</p>
+             <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Hamburger Bacon.jpg">
+             <p class="meal_name">Hamburger Bacon</p>  
+             <p class="meal_description">Ein echter Klassiker: Unser Hamburger überzeugt mit einem saftigen Rindfleisch-Patty, frisch gegrillt und perfekt gewürzt. Dazu kommen knackiger Salat, aromatische Tomaten, frische Zwiebeln, Gurken und unsere spezielle Burgersoße, eingebettet in einem goldbraun gerösteten, fluffigen Bun.</p>
+             <p class="price">2.49€</p>
+             <button class="add_meal" onclick="add_meal()">
+                <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
+             </button>
             </div>
             <image id="page_bottom_images" type="img" alt="half_burger" src="./assets/img/burger bottom.png"></image>
         </section>
