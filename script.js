@@ -99,7 +99,7 @@ function saveBasket() {
 
    basket.forEach(item => {
       const li = document.createElement("li");
-      li.textContent = `${item.name} – ${item.price.toFixed(2)} €`;
+      li.textContent = `${item.name}  ${item.price.toFixed(2)} €`;
       basketList.appendChild(li);
 
       sum += item.price; // Preise addieren
