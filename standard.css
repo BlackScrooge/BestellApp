@@ -1,0 +1,110 @@
+body {
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    margin: 0%;
+    background-color: #ff8000;
+    height: 100px;
+    display: flex;
+}
+
+.content_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    flex-grow: 1;
+    background-color: rgb(253, 253, 253);
+}
+
+#content {
+    width: 100%;
+}
+
+footer {
+    background-color: rgb(88, 83, 83);
+    height: 120px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+@media(max-width: 1240px) {
+    .meal_dish{
+        width: 800px;
+    }
+}
+
+@media(max-width: 1080px) {
+    .meal_dish{
+        width: 600px;
+    }
+
+    .meal_description{
+        font-size: 10px;
+    }
+}
+
+@media(max-width: 870px) {
+    .meal_dish{
+        width: 400px;
+    }
+
+     .meal_description{
+        font-size: 8px;
+    }
+
+    .meal_name { 
+         font-size: 8px;
+    } 
+    
+    .meal_images{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+@media(max-width: 700px) {
+    .meal_dish{
+        width: 300px;
+    }
+
+     .meal_description{
+        display: none;
+    
+    }
+    .meal_name { 
+         font-size: 8px;
+    } 
+    
+    .meal_images{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media(max-width: 490px) {
+    .meal_dish{
+        width: 150px;
+    }
+
+     .meal_description{
+        display: none;
+    
+    }
+    .meal_name { 
+        font-size: 4px;
+    } 
+    
+    .meal_images{
+        width: 10px;
+        height: 10px;
+    }
+
+    .price{
+        font-size: 4px;
+    }
+}
