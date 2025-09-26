@@ -1,0 +1,133 @@
+.basket_wrapper {
+    display: flex;
+    flex-direction: column;   
+    width: 349px;
+}
+
+.headline_basket {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background-color: #edf0f1;
+    margin: 0;
+}
+
+#basket {
+    width: 330px;
+    height: 100vh;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction: column;
+    background-color: #edf0f1;
+    position: sticky;
+    top: 0;   
+    list-style: none;
+    
+}
+
+#total{
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction: column;
+    width: 330px;
+    height: 100vh;
+    color: black;
+    background-color: #edf0f1;
+    position: sticky;
+    margin: 0;
+}
+
+@media(max-width: 1364px) {
+    .basket_wrapper {
+        width: 280px
+    }
+
+    .headline_basket {
+        width: 250px;
+    }
+
+    #basket{
+        margin-bottom: 0px;
+        width: 280px;
+    }
+
+    #total{
+        width: 280px
+    }
+}
+
+@media(max-width: 1320px) {
+    .basket_wrapper {
+        width: 250px
+    }
+
+    .headline_basket {
+        width: 220px;
+    }
+
+    #basket{
+        margin-bottom: 0px;
+        width: 250px;
+    }
+
+    #total{
+        width: 250px
+    }
+}
+
+@media(max-width: 1285px) {
+    .basket_wrapper {
+        width: 230px
+    }
+
+    .headline_basket {
+        width: 200px;
+    }
+
+    #basket{
+        margin-bottom: 0px;
+        width: 230px;
+    }
+
+    #total{
+        width: 230px
+    }
+}
+
+@media(max-width: 680px) {
+    .basket_wrapper {
+        width: 130px
+    }
+
+    .headline_basket {
+        width: 100px;
+    }
+
+    #basket{
+        margin-bottom: 0px;
+        width: 130px;
+    }
+
+    #total{
+        width: 130px
+    }
+}
+
+@media(max-width: 560px) {
+    .basket_wrapper {
+        width: 200px;          /* kleiner machen */
+        height: 200px;
+        overflow: hidden;     /* Inhalt verstecken */
+    }
+
+    #basket{
+        display: none;
+    }
+}
+
+
+
+
