@@ -12,15 +12,15 @@
     <title>BestellApp</title>
 </head>
 <body>
-    <header>
+   <header>
         <img id="logo" type="img" alt="logo" src="./assets/Logo/Logo.png">
-        <nav></nav>
-    </header> 
+   </header> 
      
     <div class="content_wrapper">
         <section id="content">
             <img id="page_top_images" type="img" alt="half_burger" src="./assets/img/burger head.png">
-            <h1>Paradise Burger</h1> 
+            <img id="logo_bestell" type="img" alt="picture" src="./assets/Favicon/android-chrome-512x512.png">
+            <h1>Paradise Burger</h1><div class="stars">★★★☆☆ (42)</div>
             <h2>Hauptgerichte</h2>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Habanero Ranch.jpg">
@@ -60,13 +60,13 @@
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/20 Garlic Pepper Chicken Nuggets.jpg">
-             <p class="meal_name">20 Garlic Pepper Chicken Nuggets</p> 
-             <p class="meal_description">Unsere 20 Garlic Pepper Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
+             <p class="meal_name">20 Chicken Nuggets</p> 
+             <p class="meal_description">Unsere 20 Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
              <p class="price">12.99€</p>
-             <button class="add_meal" onclick="addMeal('20 Garlic Pepper Chicken Nuggets', 12.99)">
+             <button class="add_meal" onclick="addMeal('20 Chicken Nuggets', 12.99)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
-             <button class="remove_meal" onclick="removeMeal('20 Garlic Pepper Chicken Nuggets', 12.99)">
+             <button class="remove_meal" onclick="removeMeal('20 Chicken Nuggets', 12.99)">
                 <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
              </button> 
             </div>
@@ -109,9 +109,9 @@
             <image id="page_bottom_images" type="img" alt="half_burger" src="./assets/img/burger bottom.png"></image>
         </section>
         <section class="basket_wrapper">
-            <p class="headline_basket">Warenkorb</p>
+            <div class="headline_basket">Warenkorb</div>
             <div id="basket"></div>
-            <p id="total">Summe: 0,00 €</p>
+            <div id="total">Summe: 0,00 €</div>           
          </section>
     </div>
     <footer>

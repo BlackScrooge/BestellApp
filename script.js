@@ -15,9 +15,9 @@ let myDishes = [
         "descripton": "Der Chicken Samurai vereint feurigen Geschmack mit zartem Biss: Knusprig paniertes Hähnchenfilet trifft auf eine würzig-scharfe Samurai-Sauce, frischen Salat, knackige Gurken und einen soften Bun. Ein Burger, der mit jedem Bissen Mut und Geschmack beweist.",
     },
      {
-        "name": "20 Garlic Pepper Chicken Nuggets",
+        "name": "20 Chicken Nuggets",
         "price": 12.99,
-        "descripton": "Unsere 20 Garlic Pepper Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.",
+        "descripton": "Unsere 20 Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.",
     },
      {
         "name": "Hamburger Royal Cheese",
@@ -37,74 +37,113 @@ let myDishes = [
     },
 ]
 
-  // Warenkorb als Array
-  let basket = [];
+     // Warenkorb als Array mit Mengen
+    let basket = [];
 
-  // Funktion zum Hinzufügen
-  function addMeal(product, price) {
-    basket.push({ name: product, price: Number(price) });
-    saveBasket();
-    renderBasket();
-  }
-
-  function removeMeal(product) {
-  // Index des ersten passenden Elements suchen
-  const index = basket.findIndex(item => item.name === product);
-
-  if (index !== -1) {
-    basket.splice(index, 1); // genau 1 Element an dieser Stelle löschen
-    saveBasket();
-    renderBasket();
-  }
-  }
-
-  // Warenkorb anzeigen
-  function renderBasket() {
-    const basketList = document.getElementById("basket");
-    if (!basketList) return; // falls DOM noch nicht bereit
-    basketList.innerHTML = ""; // alten Inhalt löschen
-
-    basket.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = `${item.name}  ${item.price.toFixed(2)} €`;
-      basketList.appendChild(li);
-    });
-  }
-
-function saveBasket() {
-  localStorage.setItem("basket", JSON.stringify(basket));
-}
-
-  function loadBasket() {
-    try {
-      const stored = localStorage.getItem("basket");
-      basket = stored ? JSON.parse(stored) : [];
-    } catch (e) {
-      basket = [];
-      console.error("Konnte basket nicht laden:", e);
+    // Gericht hinzufügen oder Menge erhöhen
+    function addMeal(product, price) {
+      const index = basket.findIndex(item => item.name === product);
+      if (index !== -1) {
+        basket[index].quantity++;
+      } else {
+        basket.push({ name: product, price: Number(price), quantity: 1 });
+      }
+      saveBasket();
+      renderBasket();
     }
-    renderBasket();
-  }
 
-  // Beim DOM-Ready laden (sicherer als sofort)
-  document.addEventListener("DOMContentLoaded", loadBasket);
+    // Gericht entfernen (Menge reduzieren oder komplett löschen)
+    function removeMeal(product) {
+      const index = basket.findIndex(item => item.name === product);
+      if (index !== -1) {
+        if (basket[index].quantity > 1) {
+          basket[index].quantity--;
+        } else {
+          basket.splice(index, 1);
+        }
+        saveBasket();
+        renderBasket();
+      }
+    }
 
-// Warenkorb darstellen + Summe berechnen
-  function renderBasket() {
-    const basketList = document.getElementById("basket");
-    const totalEl = document.getElementById("total");
-    basketList.innerHTML = "";
+    // Warenkorb anzeigen + Summe berechnen
+    function renderBasket() {
+      const basketList = document.getElementById("basket");
+      const totalEl = document.getElementById("total");
+      basketList.innerHTML = "";
 
-    let sum = 0;
+      let sum = 0;
+      let totalItems = 0;
 
-   basket.forEach(item => {
+      // Hilfsfunktion für verlässliche Namensvergleiche
+      const norm = s => String(s).trim().toLowerCase();
+
+      // ALLE Vorkommen eines Produkts entfernen (unabhängig von quantity)
+      function deleteMeal(product) {
+        const key = norm(product);
+        const prevLen = basket.length;
+
+        // Entfernt jeden Eintrag mit diesem Produktnamen
+        basket = basket.filter(item => norm(item.name) !== key);
+
+        // Optionaler Guard: nur speichern/rendern, wenn sich wirklich etwas geändert hat
+        if (basket.length !== prevLen) {
+          saveBasket();
+          renderBasket();
+        }
+      }
+
+     basket.forEach(item => {
       const li = document.createElement("li");
-      li.textContent = `${item.name}  ${item.price.toFixed(2)} €`;
+      li.textContent = `${item.name} (${item.quantity}x) - ${(item.price * item.quantity).toFixed(2)} €`;
+
+      // Button für -1
+      const btnRemove = document.createElement("button");
+      btnRemove.textContent = "-";
+      btnRemove.onclick = () => removeMeal(item.name);
+      li.appendChild(btnRemove);
+
+      // Button für „alles entfernen“
+      const btnDelete = document.createElement("button");
+      btnDelete.textContent = "X";
+      btnDelete.onclick = () => deleteMeal(item.name);
+      li.appendChild(btnDelete);
+
       basketList.appendChild(li);
 
-      sum += item.price; // Preise addieren
-      });
+      sum += item.price * item.quantity;
+      totalItems += item.quantity;
+     });
 
-    totalEl.textContent = "Summe: " + sum.toFixed(2) + " €";
+      totalEl.textContent = "Summe: " + sum.toFixed(2) + " €";
+
+      // Anzahl der Items im Warenkorb (gesamt)
+      updateCartCount(totalItems);
     }
+
+    // Anzahl der Items im Warenkorb anzeigen
+    function updateCartCount(count) {
+      const countEl = document.getElementById("cart-count");
+      countEl.textContent = count;
+    }
+
+    // Warenkorb speichern
+    function saveBasket() {
+      localStorage.setItem("basket", JSON.stringify(basket));
+    }
+
+    // Warenkorb laden
+    function loadBasket() {
+      try {
+        const stored = localStorage.getItem("basket");
+        basket = stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        basket = [];
+        console.error("Konnte basket nicht laden:", e);
+      }
+      renderBasket();
+    }
+
+    document.addEventListener("DOMContentLoaded", loadBasket);
+
 
