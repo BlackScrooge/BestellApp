@@ -2,10 +2,10 @@ function toggleBasket() {
   const wrap = document.getElementById("basket_wrapper");
 
   if (wrap.style.display === "none" || wrap.style.display === "") {
-    wrap.style.display = "block"; // einblenden
-    wrap.style.display = "block"; // einblenden
+    wrap.style.display = "block"; // show
+    wrap.style.display = "block"; // show
   } else {
-    wrap.style.display = "none"; // ausblenden
+    wrap.style.display = "none"; // hide
   }
 }
 
@@ -13,8 +13,8 @@ function closeBasket() {
   const wrap = document.getElementById("basket_wrapper");
 
   if (wrap.style.display === "none" || wrap.style.display === "") {
-    wrap.style.display = "block"; // Vollbild anzeigen
+    wrap.style.display = "block"; // show fullscreen
   } else {
-    wrap.style.display = "none";  // Ausblenden
+    wrap.style.display = "none";  // hide
   }
 }

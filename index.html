@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/basket.css"> 
     <link rel="stylesheet" href="./styles/fonts.css">
     <script src="./script.js"></script>
+    <script src="./order.js"></script>
     <script src="./toggle.js"></script>
     <title>BestellApp</title>
 </head>
@@ -114,7 +115,8 @@
             <button id="close_btn" onclick="closeBasket()">X</button>
             <div class="headline_basket">Warenkorb</div>
             <div id="basket"></div>
-            <div id="total">Summe: 0,00 €</div>           
+            <div id="total">Summe: 0,00 €</div> 
+            <button id="order_btn" onclick="orderBasket()">Bestellen</button>   
          </section>
     </div>
     <footer>
