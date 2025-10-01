@@ -15,13 +15,12 @@
 <body>
    <header>
         <img id="logo" type="img" alt="logo" src="./assets/Logo/Logo.png">
-        <button id="basket_icon" type="button" alt="basket_icon">&#128722; <!-- 🛒 --></button>
+        <button id="basket_icon" onclick="toggleBasket()" type="button" alt="basket_icon">&#128722; <!-- 🛒 --></button>
    </header> 
      
     <div class="content_wrapper">
         <section id="content">
             <img id="page_top_images" type="img" alt="half_burger" src="./assets/img/burger head.png">
-            <img id="logo_bestell" type="img" alt="picture" src="./assets/Favicon/android-chrome-512x512.png">
             <h1>Paradise Burger</h1><div class="stars">★★★☆☆ (42)</div>
             <p class="dscription">Der Bürgerladen ist ein zentraler Treffpunkt für die Nachbarschaft und bietet alles, was Bürgerinnen und Bürger im Alltag benötigen. Ob regionale Produkte, kleine Haushaltswaren oder Dienstleistungen rund um Verwaltung und Gemeinschaft – hier finden Besucher praktische Unterstützung in angenehmer Atmosphäre.</p>
             <h2>Hauptgerichte</h2>
@@ -111,7 +110,8 @@
             </div>
             <image id="page_bottom_images" type="img" alt="half_burger" src="./assets/img/burger bottom.png"></image>
         </section>
-        <section class="basket_wrapper">
+        <section id="basket_wrapper">
+            <button id="close_btn" onclick="closeBasket()">X</button>
             <div class="headline_basket">Warenkorb</div>
             <div id="basket"></div>
             <div id="total">Summe: 0,00 €</div>           
