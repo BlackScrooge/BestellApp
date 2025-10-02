@@ -16,10 +16,10 @@
 <body>
    <header>
         <img id="logo" type="img" alt="logo" src="./assets/Logo/Logo.png">
-        <button id="basket_icon" onclick="toggleBasket()" type="button" alt="basket_icon">&#128722; <!-- 🛒 --></button>
    </header> 
      
     <div class="content_wrapper">
+      
         <section id="content">
             <img id="page_top_images" type="img" alt="half_burger" src="./assets/img/burger head.png">
             <h1>Paradise Burger</h1><div class="stars">★★★☆☆ (42)</div>
@@ -117,7 +117,15 @@
             <div id="basket"></div>
             <div id="total">Summe: 0,00 €</div> 
             <button id="order_btn" onclick="orderBasket()">Bestellen</button>   
+            <div id="orderOverlay" class="overlay" hidden>
+            <div class="overlay-content">
+               <h2>Testbestellung erfolgreich!</h2>
+               <p>Deine Testbestellung wurde erfasst und der Warenkorb geleert.</p>
+               <button onclick="closeOverlay()">Schließen</button>
+            </div>
+            </div>
          </section>
+         <button id="basket_icon" onclick="toggleBasket()" type="button" alt="basket_icon">&#128722; <!-- 🛒 --></button>
     </div>
     <footer>
         <img id="fleur" type="img" alt="symbol_of_fleur" src="./assets/Logo/fleur-1293103_640.png">

@@ -4,14 +4,12 @@ const norm = s => String(s ?? "").trim().toLowerCase();
 const find = name => basket.findIndex(i => norm(i.name) === norm(name));
 const sync  = () => { saveBasket(); renderBasket(); };
 
-// add a meal
 function addMeal(name, price) {
   const i = find(name);
   i > -1 ? basket[i].quantity++ : basket.push({ name, price: +price, quantity: 1 });
   sync();
 }
 
-// remove a meal
 function removeMeal(name) {
   const i = find(name);
   if (i < 0) return;
@@ -19,14 +17,12 @@ function removeMeal(name) {
   sync();
 }
 
-// delete a meal
 function deleteMeal(name) {
   const prev = basket.length;
   basket = basket.filter(i => norm(i.name) !== norm(name));
   if (basket.length !== prev) sync();
 }
 
-// rendering and add up
 const renderBasket = () => {
   const list = document.querySelector("#basket"), total = document.querySelector("#total");
   if (!list || !total) return;
@@ -43,14 +39,11 @@ const renderBasket = () => {
   updateCartCount(count);
 };
 
-
-// Update badge
 function updateCartCount(n) {
   const item = document.getElementById("cart-count");
   if (item) item.textContent = n;
 }
 
-// Storage
 function saveBasket() { localStorage.setItem("basket", JSON.stringify(basket)); }
 function loadBasket() {
   try { basket = JSON.parse(localStorage.getItem("basket")) || []; }
@@ -58,7 +51,6 @@ function loadBasket() {
   renderBasket();
 }
 
-// Init
 document.addEventListener("DOMContentLoaded", () => {
   loadBasket();
   const list = document.getElementById("basket");
