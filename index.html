@@ -39,13 +39,13 @@
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Philly Cheese Stack.jpg">
-             <p class="meal_name"> Philly Cheese Stack</p>
-             <p class="meal_description">Der Philly Cheese Stack bringt den legendären Streetfood-Klassiker direkt auf deinen Teller: Saftig gegrilltes Rindfleisch, geschmolzener Käse in reichlicher Portion, gebratene Zwiebeln und Paprika – alles kunstvoll geschichtet in einem soften Bun. Ein herzhafter Genuss, der satt macht und Lust auf mehr weckt.</p>
+             <p class="meal_name"> Cheese Stack</p>
+             <p class="meal_description">Der Cheese Stack bringt den legendären Streetfood-Klassiker direkt auf deinen Teller: Saftig gegrilltes Rindfleisch, geschmolzener Käse in reichlicher Portion, gebratene Zwiebeln und Paprika – alles kunstvoll geschichtet in einem soften Bun. Ein herzhafter Genuss, der satt macht und Lust auf mehr weckt.</p>
              <p class="price">8.99€</p>
-             <button class="add_meal" onclick="addMeal('Philly Cheese Stack', 8.99)">
+             <button class="add_meal" onclick="addMeal('Cheese Stack', 8.99)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
-             <button class="add_meal" onclick="removeMeal('Philly Cheese Stack', 8.99)">
+             <button class="add_meal" onclick="removeMeal('Cheese Stack', 8.99)">
                 <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
              </button> 
             </div>
@@ -63,25 +63,25 @@
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/20 Garlic Pepper Chicken Nuggets.jpg">
-             <p class="meal_name">20 Chicken Nuggets</p> 
-             <p class="meal_description">Unsere 20 Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
+             <p class="meal_name">9 Chicken Nuggets</p> 
+             <p class="meal_description">Unsere 9 Chicken Nuggets bringen knusprigen Genuss im großen Stil: zartes Hähnchenfilet, umhüllt von einer goldbraunen Panade mit feiner Knoblauch-Pfeffer-Würzung. Außen herrlich crunchy, innen saftig und aromatisch – perfekt zum Teilen oder selbst genießen.</p>
              <p class="price">12.99€</p>
-             <button class="add_meal" onclick="addMeal('20 Chicken Nuggets', 12.99)">
+             <button class="add_meal" onclick="addMeal('9 Chicken Nuggets', 12.99)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
-             <button class="remove_meal" onclick="removeMeal('20 Chicken Nuggets', 12.99)">
+             <button class="remove_meal" onclick="removeMeal('9 Chicken Nuggets', 12.99)">
                 <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
              </button> 
             </div>
             <div class="meal_dish">
              <img class="meal_images" type="img" alt="meal_images" src="./assets/img meals/Hamburger Royal Cheese.jpg">
-             <p class="meal_name">Hamburger Royal Cheese</p> 
-             <p class="meal_description">Der Hamburger Royal Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis.</p>
+             <p class="meal_name">Hamburger Cheese</p> 
+             <p class="meal_description">Der Hamburger Cheese steht für puren Burger-Genuss: 100% saftiges Rindfleisch, frisch vom Grill, belegt mit zwei Scheiben zartschmelzendem Käse, knackigen Zwiebeln, Gurken und würziger Sauce. Eingebettet in einem goldbraun gerösteten Sesam-Bun wird jeder Biss zu einem königlichen Geschmackserlebnis.</p>
              <p class="price">7.79€</p> 
-             <button class="add_meal" onclick="addMeal('Hamburger Royal Cheese', 7.79)">
+             <button class="add_meal" onclick="addMeal('Hamburger Cheese', 7.79)">
                 <img class="plus" type="img" alt="plus" src="./assets/Logo/plus.svg">
              </button>
-             <button class="remove_meal" onclick="removeMeal('Hamburger Royal Cheese', 7.79)">
+             <button class="remove_meal" onclick="removeMeal('Hamburger Cheese', 7.79)">
                 <img class="minus" type="img" alt="minus" src="./assets/Logo/minus.svg">
              </button> 
             </div>
@@ -125,7 +125,7 @@
             </div>
             </div>
          </section>
-         <button id="basket_icon" onclick="toggleBasket()" type="button" alt="basket_icon">&#128722; <!-- 🛒 --></button>
+         <button id="basket_icon" onclick="toggleBasket()" type="button" alt="basket_icon">&#128722; <!-- 🛒 --><span id="cart-count" class="cart-count">0</span></button>
     </div>
     <footer>
         <img id="fleur" type="img" alt="symbol_of_fleur" src="./assets/Logo/fleur-1293103_640.png">
